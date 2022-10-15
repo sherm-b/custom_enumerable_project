@@ -6,12 +6,12 @@ This project was done as an assignment for The Odin Project. I reimplemented sev
 
 | Method                          |
 | ------------------------------- |
-| `Array#my_each`                 |
-| `Enumerable#my_each_with_index` |
-| `Enumerable#my_select`          |
-| `Enumerable#my_all?`            |
-| `Enumerable#my_any?`            |
-| `Enumerable#my_none?`           |
-| `Enumerable#my_count`           |
-| `Enumerable#my_map`             |
-| `Enumerable#my_inject`          |              
+| `Array#each`                 |
+| `Enumerable#each_with_index` |
+| `Enumerable#select`          |
+| `Enumerable#all?`            |
+| `Enumerable#any?`            |
+| `Enumerable#none?`           |
+| `Enumerable#count`           |
+| `Enumerable#map`             |
+| `Enumerable#inject`          |              
