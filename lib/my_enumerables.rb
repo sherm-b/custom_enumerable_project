@@ -33,6 +33,17 @@ module Enumerable
     end
     return true
   end
+
+  def my_any?(&conditional)
+    return to_enum(:my_any?) unless block_given?
+
+    for element in self
+      if conditional.call(element)
+        return true
+      end
+    end
+    return false
+  end
 end
 
 # You will first have to define my_each
