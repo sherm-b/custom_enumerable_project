@@ -67,7 +67,16 @@ module Enumerable
   end
   return count
   end
-    
+  
+  def my_map(&block)
+    return to_enum(:my_map) unless block_given?
+
+    new_arr = []
+    for element in self
+      new_arr << block.call(element)
+    end
+    return new_arr
+  end
 end
 
 # You will first have to define my_each
