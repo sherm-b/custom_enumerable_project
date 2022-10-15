@@ -11,10 +11,16 @@ module Enumerable
     return self
   end
 
-  def my_select
+  def my_select(&conditional)
     return to_enum(:my_select) unless block_given?
 
-    
+    true_arr = []
+    for element in self
+      if conditional.call(element)
+        true_arr << element
+      end
+    end
+    return true_arr
   end
 end
 
