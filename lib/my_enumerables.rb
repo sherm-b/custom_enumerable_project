@@ -77,6 +77,19 @@ module Enumerable
     end
     return new_arr
   end
+
+  def my_inject(init_val=0, &block)
+    return to_enum(:my_inject) unless block_given?
+
+    sum = block.call(init_val, self[0])
+    self.my_each_with_index do |element, index|
+      unless index == 0
+        sum = block.call(sum, element)
+      end
+    end
+    return sum
+  end
+
 end
 
 # You will first have to define my_each
