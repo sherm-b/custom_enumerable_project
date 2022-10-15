@@ -22,6 +22,17 @@ module Enumerable
     end
     return true_arr
   end
+
+  def my_all?(&conditional)
+    return to_enum(:my_all?) unless block_given?
+
+    for element in self
+      unless conditional.call(element)
+        return false
+      end
+    end
+    return true
+  end
 end
 
 # You will first have to define my_each
