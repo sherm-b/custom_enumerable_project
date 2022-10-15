@@ -55,6 +55,18 @@ module Enumerable
     end
     return true
   end
+  
+  def my_count(&conditional)
+  return self.length unless block_given?
+
+  count = 0
+  for element in self
+    if conditional.call(element)
+      count += 1
+    end
+  end
+  return count
+  end
     
 end
 
